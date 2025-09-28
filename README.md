@@ -30,4 +30,4 @@ To run TaskOra locally:
 
 1. Clone the repository:
    ```bash
-   git clone <repository-link>
+   git clone<https://taskoura.netlify.app> 
