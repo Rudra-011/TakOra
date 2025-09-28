@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Smart Todo - Task Manager with Alarms</title>
+    <title>TaskOra - Task Manager with Notification Alert</title>
     <style>
         * {
             margin: 0;
@@ -350,6 +350,15 @@
             text-align: center;
             color: var(--text-muted);
         }
+        .footer-content {
+            padding: 2rem 0;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            flex-wrap: wrap;
+            gap: 1rem;
+        }
+        
     </style>
 </head>
 <body>
@@ -373,7 +382,7 @@
         </div>
 
         <div class="tasks-section">
-            <h2 class="section-title">Your Tasks</h2>
+            <h2 class="section-title">My Tasks</h2>
             <div class="tasks-list" id="tasksList">
                 <div class="empty-state">
                     <div class="empty-icon">📋</div>
@@ -400,13 +409,9 @@
      <!-- Footer -->
     <footer class="footer">
         <p>&copy; 2025 Rudra Bhuyan. Crafted with lots of ❤ </p>
-        <!-- <p>Computer Science Student | AI/ML Enthusiast | Full Stack Developer</p> -->
+    
     </footer>
-    <!-- Back to Top Button -->
-    <button class="back-to-top" id="backToTop">
-        <i class="fas fa-arrow-up"></i>
-    </button>
-
+    
 
     <script>
         let tasks = JSON.parse(localStorage.getItem('smartTodoTasks')) || [];
@@ -425,9 +430,13 @@
                 oscillator.connect(gainNode);
                 gainNode.connect(audioContext.destination);
                 
-                oscillator.frequency.value = 800;
-                oscillator.type = 'sine';
-                
+                // oscillator.frequency.value = 1000;
+                // oscillator.type = 'sine';
+
+                oscillator.frequency.value = 440;
+                oscillator.type = 'sawtooth';
+                gainNode.gain.value = 1.0;
+
                 gainNode.gain.setValueAtTime(0, audioContext.currentTime);
                 gainNode.gain.linearRampToValueAtTime(0.3, audioContext.currentTime + 0.1);
                 gainNode.gain.linearRampToValueAtTime(0, audioContext.currentTime + 0.5);
@@ -445,8 +454,8 @@
 
         function playAlarm() {
             const beep = initAlarm();
-            let beepCount = 0;
-            const maxBeeps = 10;
+            let beepCount = 0; 
+            const maxBeeps = 20; // Maximum number of beeps
             
             function playBeep() {
                 if (beepCount < maxBeeps && currentAlarmTask) {
