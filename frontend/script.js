@@ -237,9 +237,28 @@ function setMinDateTime() {
     document.getElementById('taskDateTime').min = minDateTime;
 }
 
+// Add task on Enter key press
+function setupEnterKeyListeners() {
+    const taskTitleInput = document.getElementById('taskTitle');
+    const taskDateTimeInput = document.getElementById('taskDateTime');
+    
+    taskTitleInput.addEventListener('keypress', function(event) {
+        if (event.key === 'Enter') {
+            addTask();
+        }
+    });
+    
+    taskDateTimeInput.addEventListener('keypress', function(event) {
+        if (event.key === 'Enter') {
+            addTask();
+        }
+    });
+}
+
 // Initialize
 setMinDateTime();
 renderTasks();
+setupEnterKeyListeners();
 
 // Check for alarms every second
 setInterval(checkAlarms, 1000);
