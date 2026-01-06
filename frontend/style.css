@@ -4,80 +4,154 @@
     box-sizing: border-box;
 }
 
+/* Import Google Fonts */
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Roboto:wght@300;400;500;700&display=swap');
+
 :root {
-    /* Primary Blue/Indigo Colors */
-    --primary-50: #eef7ff;
-    --primary-100: #dbebff;
-    --primary-200: #b6d3f5;
-    --primary-300: #84bdf0;
-    --primary-400: #539de3;
-    --primary-500: #3a7bd5; /* Primary color */
-    --primary-600: #2a5fb8;
-    --primary-700: #1f4aa3;
-    --primary-800: #183a82;
-    --primary-900: #142f6b;
+    /* Modern Grey and White Palette */
+    --primary-50: #f9fafb;
+    --primary-100: #f3f4f6;
+    --primary-200: #e5e7eb;
+    --primary-300: #d1d5db;
+    --primary-400: #9ca3af;
+    --primary-500: #6b7280; /* Grey primary */
+    --primary-600: #4b5563;
+    --primary-700: #374151;
+    --primary-800: #1f2937;
+    --primary-900: #111827;
     
-    /* Accent Colors */
-    --accent-50: #f0f9ff;
-    --accent-100: #d1e9ff;
-    --accent-200: #b3d7ff;
-    --accent-300: #7fb8ff;
-    --accent-400: #4a9eff;
-    --accent-500: #007bff; /* Accent color */
-    --accent-600: #0069d9;
-    --accent-700: #005cbf;
-    --accent-800: #004a9e;
-    --accent-900: #003d82;
+    /* Accent Colors - Modern Blues */
+    --accent-50: #eff6ff;
+    --accent-100: #dbeafe;
+    --accent-200: #bfdbfe;
+    --accent-300: #93c5fd;
+    --accent-400: #60a5fa;
+    --accent-500: #3b82f6; /* Modern blue accent */
+    --accent-600: #2563eb;
+    --accent-700: #1d4ed8;
+    --accent-800: #1e40af;
+    --accent-900: #1e3a8a;
     
     /* Neutral Colors */
-    --neutral-50: #f8f9fa;
-    --neutral-100: #f1f3f5;
-    --neutral-200: #e9ecef;
-    --neutral-300: #dee2e6;
-    --neutral-400: #ced4da;
-    --neutral-500: #adb5bd;
-    --neutral-600: #868e96;
-    --neutral-700: #495057;
-    --neutral-800: #343a40;
-    --neutral-900: #212529;
+    --neutral-50: #fafafa;
+    --neutral-100: #f5f5f5;
+    --neutral-200: #e5e5e5;
+    --neutral-300: #d4d4d4;
+    --neutral-400: #a3a3a3;
+    --neutral-500: #737373;
+    --neutral-600: #525252;
+    --neutral-700: #404040;
+    --neutral-800: #262626;
+    --neutral-900: #171717;
     
     /* Success, Warning, Error */
-    --success: #28a745;
-    --warning: #ffc107;
-    --danger: #dc3545;
-    --info: #17a2b8;
+    --success: #10b981; /* Emerald */
+    --warning: #f59e0b; /* Amber */
+    --danger: #ef4444; /* Red */
+    --info: #06b6d4; /* Cyan */
     
     /* Backgrounds */
     --bg-primary: #ffffff;
-    --bg-secondary: #f8f9fa;
-    --bg-tertiary: #e9ecef;
+    --bg-secondary: #f9fafb;
+    --bg-tertiary: #f3f4f6;
     --bg-card: #ffffff;
     --bg-modal: rgba(0, 0, 0, 0.5);
     
     /* Text Colors */
-    --text-primary: #212529;
-    --text-secondary: #495057;
-    --text-muted: #6c757d;
-    --text-light: #f8f9fa;
+    --text-primary: #1f2937;
+    --text-secondary: #374151;
+    --text-muted: #6b7280;
+    --text-light: #f3f4f6;
     --text-white: #ffffff;
     
     /* Borders */
-    --border-color: #dee2e6;
-    --border-light: #e9ecef;
-    --border-dark: #adb5bd;
+    --border-color: #e5e7eb;
+    --border-light: #f3f4f6;
+    --border-dark: #d1d5db;
     
     /* Shadows */
-    --shadow-sm: 0 0.125rem 0.25rem rgba(0, 0, 0, 0.075);
-    --shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.15);
-    --shadow-lg: 0 1rem 3rem rgba(0, 0, 0, 0.175);
+    --shadow-sm: 0 1px 2px 0 rgba(0, 0, 0, 0.05);
+    --shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+    --shadow-lg: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
+}
+
+/* Dark Theme Variables */
+[data-theme="dark"] {
+    --bg-primary: #111827;
+    --bg-secondary: #1f2937;
+    --bg-tertiary: #374151;
+    --bg-card: #1f2937;
+    
+    --text-primary: #f9fafb;
+    --text-secondary: #d1d5db;
+    --text-muted: #9ca3af;
+    --text-light: #d1d5db;
+    
+    --border-color: #374151;
+    --border-light: #1f2937;
+    --border-dark: #4b5563;
+    
+    --shadow-sm: 0 1px 2px 0 rgba(0, 0, 0, 0.3);
+    --shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.5), 0 2px 4px -1px rgba(0, 0, 0, 0.3);
+    --shadow-lg: 0 10px 15px -3px rgba(0, 0, 0, 0.6), 0 4px 6px -2px rgba(0, 0, 0, 0.4);
 }
 
 body {
-    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-    background: linear-gradient(135deg, var(--primary-900) 0%, var(--primary-800) 50%, var(--primary-700) 100%);
-    color: var(--text-light);
+    font-family: 'Inter', 'Roboto', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+    background: 
+        linear-gradient(135deg, var(--bg-secondary) 0%, var(--bg-primary) 100%),
+        url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' stroke='%23d1d5db' stroke-width='0.5' stroke-opacity='0.05'%3E%3Cpath d='M0 0h60v60H0z'/%3E%3Cpath d='M0 20h60M0 40h60M20 0v60M40 0v60' stroke-opacity='0.07'/%3E%3C/svg%3E");
+    color: var(--text-primary);
     min-height: 100vh;
     overflow-x: hidden;
+}
+
+/* Navigation Bar */
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1rem 2rem;
+    background: var(--bg-secondary);
+    border-bottom: 1px solid var(--border-color);
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+}
+
+.navbar-title {
+    font-size: 1.5rem;
+    font-weight: 600;
+    color: var(--text-primary);
+    margin: 0;
+}
+
+.theme-toggle {
+    background: var(--bg-card);
+    border: 1px solid var(--border-color);
+    border-radius: 20px;
+    padding: 0.5rem 1rem;
+    cursor: pointer;
+    font-weight: 500;
+    color: var(--text-primary);
+    transition: all 0.3s ease;
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+}
+
+.theme-toggle:hover {
+    background: var(--bg-tertiary);
+    box-shadow: var(--shadow);
+}
+
+/* Ensure better text contrast */
+h1, h2, h3, h4, h5, h6 {
+    color: var(--text-primary);
+}
+
+p, span, div {
+    color: var(--text-primary);
 }
 
 .container {
@@ -95,7 +169,7 @@ body {
 .logo {
     font-size: 3rem;
     font-weight: 700;
-    background: linear-gradient(45deg, var(--primary-500), var(--accent-500));
+    background: linear-gradient(45deg, var(--primary-600), var(--accent-500));
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
     background-clip: text;
@@ -110,13 +184,14 @@ body {
 }
 
 .add-task-section {
-    background: rgba(255, 255, 255, 0.1);
+    background: var(--bg-card);
     backdrop-filter: blur(10px);
-    border: 1px solid rgba(58, 123, 213, 0.485);
+    border: 1px solid var(--border-color);
     border-radius: 16px;
     padding: 30px;
     margin-bottom: 40px;
     animation: slideUp 0.8s ease-out;
+    box-shadow: var(--shadow);
 }
 
 .form-group {
@@ -127,29 +202,29 @@ label {
     display: block;
     margin-bottom: 8px;
     font-weight: 600;
-    color: var(--primary-500);
+    color: var(--text-primary);
 }
 
 input[type="text"], input[type="datetime-local"] {
     width: 100%;
     padding: 15px;
-    border: 2px solid rgba(255, 255, 255, 0.1);
+    border: 1px solid var(--border-color);
     border-radius: 8px;
-    background: rgba(255, 255, 255, 0.05);
-    color: white;
+    background: var(--bg-primary);
+    color: var(--text-primary);
     font-size: 1rem;
     transition: all 0.3s ease;
 }
 
 input[type="text"]:focus, input[type="datetime-local"]:focus {
     outline: none;
-    border-color: var(--primary-500);
-    box-shadow: 0 0 20px rgba(58, 123, 213, 0.3);
+    border-color: var(--accent-500);
+    box-shadow: 0 0 0 3px rgba(59, 130, 246, 0.1);
     transform: translateY(-2px);
 }
 
 .add-btn {
-    background: linear-gradient(45deg, var(--primary-500), var(--accent-500));
+    background: linear-gradient(45deg, var(--accent-500), var(--accent-600));
     border: none;
     padding: 15px 30px;
     border-radius: 8px;
@@ -158,12 +233,12 @@ input[type="text"]:focus, input[type="datetime-local"]:focus {
     font-weight: 600;
     cursor: pointer;
     transition: all 0.3s ease;
-    box-shadow: 0 4px 15px rgba(58, 123, 213, 0.3);
+    box-shadow: var(--shadow);
 }
 
 .add-btn:hover {
     transform: translateY(-3px);
-    box-shadow: 0 8px 25px rgba(58, 123, 213, 0.4);
+    box-shadow: var(--shadow-lg);
 }
 
 .add-btn:active {
@@ -178,7 +253,7 @@ input[type="text"]:focus, input[type="datetime-local"]:focus {
     font-size: 2rem;
     margin-bottom: 20px;
     text-align: center;
-    color: #ffffff;
+    color: var(--text-primary);
 }
 
 .tasks-list {
@@ -187,9 +262,9 @@ input[type="text"]:focus, input[type="datetime-local"]:focus {
 }
 
 .task-item {
-    background: rgba(0, 0, 0, 0.3);
+    background: var(--bg-card);
     backdrop-filter: blur(10px);
-    border: 1px solid rgba(255, 255, 255, 0.1);
+    border: 1px solid var(--border-light);
     border-radius: 12px;
     padding: 20px;
     display: flex;
@@ -199,17 +274,19 @@ input[type="text"]:focus, input[type="datetime-local"]:focus {
     animation: slideInLeft 0.5s ease-out;
     position: relative;
     overflow: hidden;
+    box-shadow: var(--shadow-sm);
+    color: var(--text-primary);
 }
 
 .task-item:hover {
     transform: translateX(10px);
-    border-color: rgba(58, 123, 213, 0.5);
-    box-shadow: 0 5px 20px rgba(0, 0, 0, 0.3);
+    border-color: var(--accent-300);
+    box-shadow: var(--shadow);
 }
 
 .task-item.urgent {
     border-left: 4px solid var(--danger);
-    background: linear-gradient(90deg, rgba(220, 53, 69, 0.1) 0%, rgba(0, 0, 0, 0.3) 100%);
+    background: linear-gradient(90deg, rgba(239, 68, 68, 0.05) 0%, var(--bg-card) 100%);
     animation: pulse 2s infinite;
 }
 
@@ -236,9 +313,9 @@ input[type="text"]:focus, input[type="datetime-local"]:focus {
 }
 
 .delete-btn {
-    background: rgba(255, 255, 255, 0.1);
-    border: 1px solid rgba(255, 255, 255, 0.2);
-    color: white;
+    background: var(--bg-secondary);
+    border: 1px solid var(--border-color);
+    color: var(--danger);
     padding: 8px 12px;
     border-radius: 6px;
     cursor: pointer;
@@ -246,23 +323,26 @@ input[type="text"]:focus, input[type="datetime-local"]:focus {
 }
 
 .delete-btn:hover {
-    background: rgba(220, 53, 69, 0.8);
-    transform: scale(1.1);
+    background: var(--danger);
+    color: white;
+    transform: scale(1.05);
 }
 
 .notification {
     position: fixed;
     top: 20px;
     right: 20px;
-    background: linear-gradient(45deg, var(--primary-500), var(--accent-500));
-    color: white;
+    background: var(--bg-card);
+    color: var(--text-primary);
     padding: 15px 20px;
     border-radius: 8px;
-    box-shadow: 0 4px 20px rgba(58, 123, 213, 0.3);
+    box-shadow: var(--shadow-lg);
     z-index: 1000;
     transform: translateX(400px);
     transition: transform 0.3s ease;
     max-width: 300px;
+    border-left: 4px solid var(--accent-500);
+    border: 1px solid var(--border-color);
 }
 
 .notification.show {
@@ -275,7 +355,7 @@ input[type="text"]:focus, input[type="datetime-local"]:focus {
     left: 0;
     width: 100vw;
     height: 100vh;
-    background: rgba(0, 0, 0, 0.9);
+    background: rgba(0, 0, 0, 0.7);
     display: none;
     justify-content: center;
     align-items: center;
@@ -284,18 +364,22 @@ input[type="text"]:focus, input[type="datetime-local"]:focus {
 }
 
 .alarm-content {
-    background: linear-gradient(45deg, var(--primary-500), var(--accent-500));
+    background: var(--bg-card);
     padding: 40px;
     border-radius: 16px;
     text-align: center;
     max-width: 400px;
     animation: bounceIn 0.5s ease-out;
+    box-shadow: var(--shadow-lg);
+    border: 1px solid var(--border-color);
+    color: var(--text-primary);
 }
 
 .alarm-title {
     font-size: 2rem;
     margin-bottom: 20px;
     animation: pulse 1s infinite;
+    color: var(--danger);
 }
 
 .snooze-btn, .dismiss-btn {
@@ -309,13 +393,13 @@ input[type="text"]:focus, input[type="datetime-local"]:focus {
 }
 
 .snooze-btn {
-    background: rgba(255, 255, 255, 0.2);
-    color: white;
+    background: var(--bg-secondary);
+    color: var(--text-primary);
 }
 
 .dismiss-btn {
-    background: white;
-    color: var(--danger);
+    background: var(--danger);
+    color: white;
 }
 
 .snooze-btn:hover, .dismiss-btn:hover {
@@ -326,6 +410,8 @@ input[type="text"]:focus, input[type="datetime-local"]:focus {
     text-align: center;
     padding: 60px 20px;
     color: var(--text-muted);
+    background: var(--bg-secondary);
+    border-radius: 12px;
 }
 
 .empty-icon {
@@ -401,12 +487,12 @@ input[type="text"]:focus, input[type="datetime-local"]:focus {
 
 .back-to-top:hover {
     transform: translateY(-5px);
-    box-shadow: 0 10px 25px rgba(58, 123, 213, 0.4);
+    box-shadow: var(--shadow-lg);
 }
 /* Footer */
 .footer {
-    background: rgba(255, 255, 255, 0.05);
-    border-top: 1px solid rgba(58, 123, 213, 0.2);
+    background: var(--bg-secondary);
+    border-top: 1px solid var(--border-color);
     padding: 2rem;
     text-align: center;
     color: var(--text-muted);
