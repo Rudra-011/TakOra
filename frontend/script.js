@@ -247,11 +247,13 @@ setInterval(checkAlarms, 1000);
 // Update countdown every minute
 setInterval(renderTasks, 60000);
 
-// Theme Toggle Functionality
+// Theme and Menu Toggle Functionality
 document.addEventListener('DOMContentLoaded', function() {
     const themeToggle = document.getElementById('themeToggle');
     const themeIcon = document.getElementById('themeIcon');
     const themeText = document.getElementById('themeText');
+    const menuToggle = document.getElementById('menuToggle');
+    const menuDropdown = document.getElementById('menuDropdown');
     
     // Check for saved theme preference or respect OS preference
     const savedTheme = localStorage.getItem('theme');
@@ -264,6 +266,7 @@ document.addEventListener('DOMContentLoaded', function() {
         themeText.textContent = 'Light Mode';
     }
     
+    // Theme toggle functionality
     themeToggle.addEventListener('click', function() {
         const currentTheme = document.documentElement.getAttribute('data-theme');
         
@@ -277,6 +280,21 @@ document.addEventListener('DOMContentLoaded', function() {
             themeIcon.textContent = '☀️';
             themeText.textContent = 'Light Mode';
             localStorage.setItem('theme', 'dark');
+        }
+        
+        // Close the menu after theme selection
+        menuDropdown.classList.remove('show');
+    });
+    
+    // Menu toggle functionality
+    menuToggle.addEventListener('click', function() {
+        menuDropdown.classList.toggle('show');
+    });
+    
+    // Close menu when clicking outside
+    document.addEventListener('click', function(event) {
+        if (!menuToggle.contains(event.target) && !menuDropdown.contains(event.target)) {
+            menuDropdown.classList.remove('show');
         }
     });
 });
